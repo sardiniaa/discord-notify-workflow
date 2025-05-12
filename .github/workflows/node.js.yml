@@ -40,7 +40,7 @@ jobs:
           embed-url: ${{ github.event.commits[0].url }}
           embed-description: |
             **Developer:** ${{ steps.set-developer.outputs.developer }} (${{ github.actor }})
-            **Repository:** \`$${{ github.repository }}\`
+            **Repository:** `$${{ github.repository }}`
 
             **Commit Info:**
             ${{ github.event.commits[0].message }}
