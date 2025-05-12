@@ -42,7 +42,6 @@ jobs:
             **Developer:** ${{ steps.set-developer.outputs.developer }} (${{ github.actor }})
             **Repository:** `${{ github.repository }}`
 
-            **Commit Info:**
             ${{ github.event.commits[0].message }}
             ${{ steps.changed-files.outputs.added_files_count != '0' && format('**Added Files ({0}):**```{1}```', steps.changed-files.outputs.added_files_count, steps.changed-files.outputs.added_files) || '' }}
             ${{ steps.changed-files.outputs.modified_files_count != '0' && format('**Modified Files ({0}):**```{1}```', steps.changed-files.outputs.modified_files_count, steps.changed-files.outputs.modified_files) || '' }}
