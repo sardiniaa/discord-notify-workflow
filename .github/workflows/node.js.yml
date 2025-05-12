@@ -44,7 +44,6 @@ jobs:
 
             **Commit Info:**
             ${{ github.event.commits[0].message }}
-            
             ${{ steps.changed-files.outputs.added_files_count != '0' && format('**Added Files ({0}):**\n```{1}```', steps.changed-files.outputs.added_files_count, steps.changed-files.outputs.added_files) || '' }}
             ${{ steps.changed-files.outputs.modified_files_count != '0' && format('**Modified Files ({0}):**\n```{1}```', steps.changed-files.outputs.modified_files_count, steps.changed-files.outputs.modified_files) || '' }}
             ${{ steps.changed-files.outputs.deleted_files_count != '0' && format('**Deleted Files ({0}):**\n```{1}```', steps.changed-files.outputs.deleted_files_count, steps.changed-files.outputs.deleted_files) || '' }}
