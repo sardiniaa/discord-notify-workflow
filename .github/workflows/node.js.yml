@@ -22,6 +22,11 @@ jobs:
         run: echo "developer=${GITHUB_ACTOR}" >> $GITHUB_OUTPUT
         shell: bash
 
+      - name: Set short SHA
+        id: short-sha
+        run: echo "short_sha=${GITHUB_SHA::7}" >> $GITHUB_OUTPUT
+        shell: bash
+
       - name: Send Discord Notification - Base
         uses: tsickert/discord-webhook@v5.3.0
         with:
@@ -35,7 +40,7 @@ jobs:
             **Commit Info:**
             ${{ github.event.commits[0].message }}
           embed-timestamp: ${{ github.event.commits[0].timestamp }}
-          embed-footer-text: "ID: ${{ github.sha }}"
+          embed-footer-text: "ID: ${{ steps.short-sha.outputs.short_sha }}"
           embed-footer-icon-url: "https://avatars.githubusercontent.com/u/146239970?v=4"
 
       - name: Discord - Added files
