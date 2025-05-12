@@ -44,9 +44,9 @@ jobs:
 
             **Commit Info:**
             ${{ github.event.commits[0].message }}
-            ${{ steps.changed-files.outputs.added_files_count != '0' && format('**Added Files ({0}):**\n```{1}```', steps.changed-files.outputs.added_files_count, steps.changed-files.outputs.added_files) || '' }}
-            ${{ steps.changed-files.outputs.modified_files_count != '0' && format('**Modified Files ({0}):**\n```{1}```', steps.changed-files.outputs.modified_files_count, steps.changed-files.outputs.modified_files) || '' }}
-            ${{ steps.changed-files.outputs.deleted_files_count != '0' && format('**Deleted Files ({0}):**\n```{1}```', steps.changed-files.outputs.deleted_files_count, steps.changed-files.outputs.deleted_files) || '' }}
+            ${{ steps.changed-files.outputs.added_files_count != '0' && format('**Added Files ({0}):**```{1}```', steps.changed-files.outputs.added_files_count, steps.changed-files.outputs.added_files) || '' }}
+            ${{ steps.changed-files.outputs.modified_files_count != '0' && format('**Modified Files ({0}):**```{1}```', steps.changed-files.outputs.modified_files_count, steps.changed-files.outputs.modified_files) || '' }}
+            ${{ steps.changed-files.outputs.deleted_files_count != '0' && format('**Deleted Files ({0}):**```{1}```', steps.changed-files.outputs.deleted_files_count, steps.changed-files.outputs.deleted_files) || '' }}
           embed-timestamp: ${{ github.event.commits[0].timestamp }}
           embed-footer-text: "ID: ${{ steps.short-sha.outputs.short_sha }}"
           embed-footer-icon-url: "https://avatars.githubusercontent.com/u/146239970?v=4"
